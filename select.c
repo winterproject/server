@@ -78,6 +78,7 @@ int main()
 			{
 				if( (n = read(clientSock[i] , rcvBuffer, sizeof(rcvBuffer))) != 0 )
 				{
+				/*	it dosen't work	
 					if ( rcvBuffer[0] == 'p' && rcvBuffer[1] == '1')
 					{
 						char buff[BUFSIZ];
@@ -94,8 +95,8 @@ int main()
 							printf("%s", buff);
 
 						pclose(fp);
-					}    
-					else if ( strncmp(rcvBuffer, quit, 4) == 0)
+					}*/    
+					if ( strncmp(rcvBuffer, quit, 4) == 0)
 					{
 						close(clientSock[i]);
 						if( i != numClient-1)
